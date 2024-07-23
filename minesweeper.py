@@ -5,6 +5,7 @@ import sys
 import random
 import time
 from userInterface import get_table_info
+from constants import *
 class game_object:
     def __init__(self , id = "blank" , status = "unmarked" , neighbour_bomb = 0 , position = (None , None) , isVisiable = False):
         self.id = id 
@@ -27,14 +28,7 @@ screen_width, screen_height = 800, 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("MineSweeper")
 
-# Colors
-WHITE = (255, 255, 255)
-BLACK = (0, 0, 0, 0) # Transparent black
-GRAY = (110, 117, 115)
-HUD_AREA = 150 
-TABLE_SIDE = screen_width - HUD_AREA*2#TODO create a box side size
-TABLE_X , TABLE_Y = 150 , 50
-BOX_SIDE = TABLE_SIDE / size
+
 flag = pygame.image.load(r'flag.bmp')
 question = pygame.image.load(r'question.bmp')
 bomb_dised = pygame.image.load(r'bomb_dised.bmp')
