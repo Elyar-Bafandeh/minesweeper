@@ -1,11 +1,11 @@
-import tkinter as tk
-from tkinter import messagebox
+
 import pygame
 import sys
 import random
 import time
 from userInterface import get_table_info
 from constants import *
+from gameIcons import getIcons
 class game_object:
     def __init__(self , id = "blank" , status = "unmarked" , neighbour_bomb = 0 , position = (None , None) , isVisiable = False):
         self.id = id 
@@ -29,16 +29,7 @@ screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("MineSweeper")
 
 
-flag = pygame.image.load(r'flag.bmp')
-question = pygame.image.load(r'question.bmp')
-bomb_dised = pygame.image.load(r'bomb_dised.bmp')
-bomb_blewup = pygame.image.load(r'bomb_blewup.bmp')
-
-flag = pygame.transform.scale(flag , (BOX_SIDE -BOX_SIDE*0.1 , BOX_SIDE-BOX_SIDE*0.1))
-question = pygame.transform.scale(question , (BOX_SIDE -BOX_SIDE*0.1 , BOX_SIDE-BOX_SIDE*0.1))
-bomb_dised = pygame.transform.scale(bomb_dised , (BOX_SIDE , BOX_SIDE))
-bomb_blewup = pygame.transform.scale(bomb_blewup , (BOX_SIDE , BOX_SIDE))
-
+flag , question , bomb_dised , bomb_blewup = getIcons()
 
 # Main game loop
 left , right = False,False
