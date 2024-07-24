@@ -1,7 +1,6 @@
 from userInterface import get_table_info
 screen_width, screen_height = 800, 600
 size , mines = get_table_info()
-
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0, 0) # Transparent black
 GRAY = (110, 117, 115)

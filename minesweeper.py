@@ -7,14 +7,7 @@ from userInterface import get_table_info
 from constants import *
 from gameIcons import getIcons
 from utilityBox import *
-class game_object:
-    def __init__(self , id = "blank" , status = "unmarked" , neighbour_bomb = 0 , position = (None , None) , isVisiable = False):
-        self.id = id 
-        self.status = status
-        self.neighbourBomb = neighbour_bomb
-        self.pos = position
-        self.isVisiable = isVisiable
-
+from game_object import game_object
 lose = False
 
 pygame.init()
@@ -22,7 +15,6 @@ pygame.init()
 # Screen dimensions
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("MineSweeper")
-
 
 flag , question , bomb_dised , bomb_blewup = getIcons()
 
