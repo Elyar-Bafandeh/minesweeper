@@ -15,5 +15,5 @@ def scaleIcons(flag , question , bomb_dised , bomb_blewup):
 
 def getIcons():
     flag , question , bomb_dised , bomb_blewup = loadIcons()
-    scaleIcons()
+    scaleIcons(flag , question , bomb_dised , bomb_blewup)
     return flag , question , bomb_dised , bomb_blewup

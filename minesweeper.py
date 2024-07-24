@@ -6,6 +6,7 @@ import time
 from userInterface import get_table_info
 from constants import *
 from gameIcons import getIcons
+from utilityBox import *
 class game_object:
     def __init__(self , id = "blank" , status = "unmarked" , neighbour_bomb = 0 , position = (None , None) , isVisiable = False):
         self.id = id 
@@ -15,16 +16,10 @@ class game_object:
         self.isVisiable = isVisiable
 
 lose = False
-size , mines = get_table_info()
-
-print(size , " " , mines)
-
-
 
 pygame.init()
 
 # Screen dimensions
-screen_width, screen_height = 800, 600
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("MineSweeper")
 
@@ -40,15 +35,7 @@ for i in range(size):
 
 blank_cluster = [[]]
 first_press = True
-def get_index(click_pos , size):
-    return ((click_pos[0]-HUD_AREA)//(BOX_SIDE)  , (click_pos[1]-50)//(BOX_SIDE))
 
-def is_in_2dArray(array , obj):
-    for i in array:
-        for j in i:
-            if j.pos == obj.pos:
-                return True 
-    return False
 start_time = time.time()
 visiable_boxes = 0
 while True:
